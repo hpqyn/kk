@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Roboto:wght@500&display=swap');
+
+        body {
+            background: linear-gradient(to right, #a7eaff, #ffb8ff);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            /* background: url('https://hdwallpaperfx.com/wp-content/uploads/2023/09/iPhone-14-Pro-Christmas-Wallpaper.jpg'); */
+        }
+
+
+        svg {
+            width: 90%;
+            height: 90%;
+            visibility: hidden;
+
+        }
+
+        .sparkle {
+            /* mix-blend-mode:luminosity */
+        }
+
+        .text {
+            padding: 15px 15px 15px 15px;
+            font-family: "Ephesis", sans-serif;
+            font-size: 83px;
+            color: #fffefe;
+            position: fixed;
+            top: calc(50% - 500px);
+            text-align: center;
+            opacity: 0;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            /* Ensures the content is not revealed until the animation */
+            border-right: 2px solid rgb(255, 227, 227);
+            /* The typwriter cursor */
+            white-space: nowrap;
+            /* Keeps the content on a single line */
+            margin: 0 auto;
+            /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em;
+            /* Adjust as needed */
+            animation:
+                typing 3.5s steps(40, end) forwards,
+                blink-caret .75s step-end forwards;
+            animation-delay: 5s;
+        }
+        .santa-claus {
+            animation: santa 2s forwards;
+            animation-delay: 6s;
+            width: 300px;
+            height: 300px;
+            position: fixed;
+            top: calc(50% + 30px);
+            left: calc(50% + 200px);
+            opacity: 0;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+
+            to {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+        /* The typing effect */
+        @keyframes santa {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #ffdede;
+            }
+        }
+
+        .center-text {
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            top: 95%; /* Đẩy dòng chữ xuống thấp hơn */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: rgba(255, 153, 0, 0.74);
+            font-family: 'Arial', sans-serif;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000; /* Đảm bảo lớp chữ nằm trên các phần tử khác */
+            opacity: 0; /* Ẩn dòng chữ ban đầu */
+            animation: fadeIn 2s ease-in forwards;
+            animation-delay: 8s; /* Xuất hiện sau 10 giây */
+        }
+
+        .center-text-HPQ {
+            font-size: x-small;
+            position: absolute;
+            top: 55%; /* Đẩy dòng chữ xuống thấp hơn */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: rgba(255, 51, 177, 0.596);
+            font-family: 'Arial', sans-serif;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000; /* Đảm bảo lớp chữ nằm trên các phần tử khác */
+            opacity: 0; /* Ẩn dòng chữ ban đầu */
+            animation: fadeIn 2s ease-in forwards;
+            animation-delay: 8s; /* Xuất hiện sau 10 giây */
+        }
+        
+        /* Hiệu ứng mờ dần */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        
+
+        @keyframes snow-fall {
+            0% {
+                transform: translateY(0);
+                opacity: 0; /* Bắt đầu mờ */
+            }
+            20% {
+                opacity: 1; /* Hiện rõ dần trong khoảng 1-2 giây đầu */
+            }
+            30% {
+                opacity: 1; /* Hiện rõ dần trong khoảng 1-2 giây đầu */
+            }
+            40% {
+                opacity: 0; /* Hiện rõ dần trong khoảng 1-2 giây đầu */
+            }
+            50% {
+                opacity: 0; /* Duy trì rõ nét */
+            }
+            60% {
+                opacity: 1; /* Duy trì rõ nét */
+            }
+            80% {
+                opacity: 1; /* Duy trì rõ nét */
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0; /* Mờ dần ở cuối hành trình */
+            }
+        }
+        
+        .snowflakes {
+            z-index: 1000;
+            opacity: 0; /* Bắt đầu mờ */
+            animation: fadeIn 2s ease-in forwards;
+            animation-delay: 3s; /* Hiện ra sau 3 giây */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .snowflakes .flake {
+            position: absolute;
+            top: -10px;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            animation: snow-fall 10s linear infinite; /* Thời gian rơi: 10 giây */
+        }
+        
+        .snowflakes .flake-text {
+            color: #ff43e6;
+            position: absolute;
+            top: -10px;
+            animation: snow-fall 10s linear infinite;
+        }
+        
